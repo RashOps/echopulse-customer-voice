@@ -48,3 +48,26 @@ def make_age_sentiment_chart(df):
         line_shape="spline"
     )
     return fig
+
+# 4. Graphique distribution de la polarité
+def make_sentiment_distribution(df):
+    """
+    Crée un histogramme de la distribution des scores de sentiment.
+    Permet de visualiser la polarisation des avis clients.
+    """
+    fig = px.histogram(
+        df,
+        x="Sentiment Score",
+        color="Sentiment Category",
+        nbins=50,
+        title="Distribution de la Polarité des Avis",
+        color_discrete_map={"Positif": '#2ecc71', 'Neutre': '#95a5a6', 'Négatif': '#e74c3c'},
+        labels={"Sentiment Score": "Score de Sentiment", "count": "Nombre d'avis"}
+    )
+    
+    # Ajout d'une ligne verticale pour la moyenne globale
+    fig.add_vline(x=df["Sentiment Score"].mean(), line_dash="dash", line_color="black", 
+        annotation_text="Moyenne", annotation_position="top left")
+    
+    fig.update_layout(showlegend=True, bargap=0.1)
+    return fig
