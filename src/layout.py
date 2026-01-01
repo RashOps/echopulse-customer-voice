@@ -48,13 +48,13 @@ def layout() :
                 dbc.Card(dbc.CardBody(
                         [
                             html.Label("Recherche par mot-clé :"),
-                            dcc.Input(id="search-input", type="text", placeholder="Ex: silky, fit...", className="form-control shadow-sm"),
+                            dcc.Input(id="search-input", type="text", placeholder="Ex: silky, fit...", debounce=True, className="form-control shadow-sm"),
                             html.Br(),
                             html.Label("Choisir une catégorie"),
                             dcc.Dropdown(options=[{'label': i, 'value': i} for i in division_list], value=None, placeholder="Toutes les divisions", id="filter-dept", className="shadow-sm", multi=True, style={'color': '#212121'}),
                             html.Br(),
                             html.Label("Score de Sentiment Min/Max :"),
-                            dcc.RangeSlider(min=-1, max=1, value=[-1,1], step=0.1, marks={-1: 'Neg (-1)', 0: 'Neutre', 1: 'Pos (1)'}, id="filter-sentiment"),
+                            dcc.RangeSlider(min=-1, max=1, value=[-1,1], step=0.1, marks={-1: 'Neg (-1)', 0: 'Neutre', 1: 'Pos (1)'}, allowCross=False, pushable=0.1, tooltip={"placement": "bottom", "always_visible": False}, id="filter-sentiment", className="mt-2"),
                             html.Br(),
                             html.Label("Choisir des topics"),
                             dcc.Checklist(options=[{'label': i, 'value': i} for i in topic_list], value=topic_list, id="filter-topic")

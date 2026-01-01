@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 from dash import Input, Output, State, callback, dcc
 from graphs import make_topic_barchart, make_age_sentiment_chart, make_sunburst_chart, make_sentiment_distribution
 from data_loader import load_data
@@ -34,7 +35,8 @@ def update_dashboard(selected_depts, sentiment_range, selected_topic, search_tex
         dff = dff[dff["Topic Label"].isin(selected_topic)]
     
     if search_text:
-        dff = dff[dff["Full Review"].str.contains(search_text, case=False, na=False)]
+        safe_query = re.escape(search_text)
+        dff = dff[dff["Full Review"].str.contains(safe_query, case=False, na=False)]
     
     # KPI
     if not dff.empty:
