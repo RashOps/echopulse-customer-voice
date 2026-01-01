@@ -1,0 +1,18 @@
+# Python - Fichiers compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environnement Virtuel
+venv/
+env/
+.env
+.venv/
+
+# IDE - Configuration locale
+.vscode/
+.idea/
+.DS_Store
+
+# Dash/Flask
+.webassets-cache
