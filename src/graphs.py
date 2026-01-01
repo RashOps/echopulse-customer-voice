@@ -5,9 +5,9 @@ import pandas as pd
 # 1. Graphique des Topics (Bar Chart Horizontal)
 def make_topic_barchart(df):
     if df.empty:
-        fig = go.Figure()
-        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", 
-                            showarrow=False, font=dict(size=20))
+        fig = go.Figure(),
+        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'),
+        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", showarrow=False, font=dict(size=20))
         return fig
 
     topic_counts = df["Topic Label"].value_counts().reset_index()
@@ -37,9 +37,9 @@ def make_topic_barchart(df):
 # 2. Graphique Hiérarchique (Sunburst)
 def make_sunburst_chart(df):
     if df.empty:
-        fig = go.Figure()
-        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", 
-                            showarrow=False, font=dict(size=20))
+        fig = go.Figure(),
+        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'),
+        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", showarrow=False, font=dict(size=20))
         return fig
 
     fig = px.sunburst(
@@ -65,9 +65,9 @@ def make_sunburst_chart(df):
 # 3. Graphique Démographique (Distribution Sentiment par Age)
 def make_age_sentiment_chart(df):
     if df.empty:
-        fig = go.Figure()
-        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", 
-                            showarrow=False, font=dict(size=20))
+        fig = go.Figure(),
+        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'),
+        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", showarrow=False, font=dict(size=20))
         return fig
     
     df_temp = df.copy()
@@ -96,9 +96,9 @@ def make_age_sentiment_chart(df):
 # 4. Graphique distribution de la polarité
 def make_sentiment_distribution(df):
     if df.empty:
-        fig = go.Figure()
-        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", 
-                            showarrow=False, font=dict(size=20))
+        fig = go.Figure(),
+        fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'),
+        fig.add_annotation(text="Aucune donnée ne correspond à ces filtres", showarrow=False, font=dict(size=20))
         return fig
     
     fig = px.histogram(

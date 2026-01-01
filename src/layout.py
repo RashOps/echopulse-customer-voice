@@ -51,7 +51,7 @@ def layout() :
                             dcc.Input(id="search-input", type="text", placeholder="Ex: silky, fit...", className="form-control shadow-sm"),
                             html.Br(),
                             html.Label("Choisir une catégorie"),
-                            dcc.Dropdown(options=[{'label': i, 'value': i} for i in division_list], value=None, placeholder="Toutes les divisions", id="filter-dept", className="shadow-sm", multi=True),
+                            dcc.Dropdown(options=[{'label': i, 'value': i} for i in division_list], value=None, placeholder="Toutes les divisions", id="filter-dept", className="shadow-sm", multi=True, style={'color': '#212121'}),
                             html.Br(),
                             html.Label("Score de Sentiment Min/Max :"),
                             dcc.RangeSlider(min=-1, max=1, value=[-1,1], step=0.1, marks={-1: 'Neg (-1)', 0: 'Neutre', 1: 'Pos (1)'}, id="filter-sentiment"),
