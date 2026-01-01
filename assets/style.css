@@ -1,0 +1,45 @@
+/* Arrondis pour toutes les cartes */
+.card {
+    border-radius: 12px !important;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: none !important;
+}
+
+/* Effet de survol sur les cartes */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1) !important;
+}
+
+/* Personnalisation de la Sidebar */
+#filter-dept, #filter-topic {
+    border-radius: 8px;
+}
+
+/* Amélioration de la Table */
+.dash-spreadsheet-container .dash-spreadsheet {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 10px;
+}
+
+/* On cible le conteneur du graphique généré par Dash */
+.js-plotly-plot {
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Si tu as mis tes dcc.Graph dans des dbc.Card */
+.card {
+    border: 1px solid #444 !important; 
+    background-color: #303030 !important;
+}
