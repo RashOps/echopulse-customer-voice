@@ -38,6 +38,7 @@ echopulse-customer-voice/
 │   ├── layout.py       # Structure visuelle (HTML/Divs)
 │   └── callbacks.py    # Logique interactive
 └── assets/             # CSS
+```
 
 ## ⚙️ Installation & Lancement
 1. Installer les dépendances : `pip install -r requirements.txt`
